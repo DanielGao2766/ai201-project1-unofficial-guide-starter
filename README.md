@@ -94,10 +94,10 @@
 | # | Question | Expected answer | System response (summarized) | Retrieval quality | Response accuracy |
 |---|----------|-----------------|------------------------------|-------------------|-------------------|
 | 1 | What is the closest dorm to Newcomb Dining Hall? | Brown Residential College | According to [1] (brown_official), Brown Residential College is 1 minute from Central Grounds, and Newcomb Hall is implied to be on Central Grounds (as it has mail services and is mentioned alongside a distance to Central Grounds and bus routes). Therefore, Brown Residential College is near Newcomb Hall | Relevant | Accurate |
-| 2 | | | | | |
-| 3 | | | | | |
-| 4 | | | | | |
-| 5 | | | | | |
+| 2 | What is the difference between Residential Colleges and other First-Year Dorm Options? | Residential Colleges have students from all years, while First-Year dorms have only First-Year students | The main difference is that students can apply for Residential Colleges, which gives them some say in their housing, whereas assignments in traditional buildings are random. Additionally, Residential Colleges may have a different room setup, with some having double rooms, and at least one (Brown) having a selective application process | Partially relevant | Partially accurate |
+| 3 | Which dorms have personal bathrooms (i.e. non communal bathrooms)? | Any suite style dorm (Gooch Dillard, Alderman Road Suite Style Dorms) | Based on the provided context, it appears that there are no dorms with completely personal bathrooms (i.e., non-communal bathrooms) for first-year students. However, some dorms have suite-style arrangements where a private bathroom is shared among a few people (typically 3-4) | Relevant | Accurate |
+| 4 | Which Dorm is closest to Runk Dining Hall? | Gooch-Dillard| The context does not contain enough information to answer which dorm is closest to Runk Dining Hall | Off-target | Inaccurate |
+| 5 | Which Dorm has the most central location? | According to [1] (reddit_dorms_ranked), Brown has the best location of any dorm. | Relevant | Accurate | 
 
 **Retrieval quality:** Relevant / Partially relevant / Off-target  
 **Response accuracy:** Accurate / Partially accurate / Inaccurate

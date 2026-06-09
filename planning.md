@@ -85,7 +85,7 @@ Finally, I would choose to have no Multilingual Support because there is only a 
 | 2 | What is the difference between Residential Colleges and other First-Year Dorm Options? | Res Colleges have students from all years, while First-Year dorms have only First-Year students
 | 3 | Which dorms have personal bathrooms (i.e. non communal bathrooms)? | Any suite style dorm (Gooch Dillard, Alderman Road Suite Style Dorms) |
 | 4 | Which Dorm is closest to Runk Dining Hall? | Gooch Dillard
-| 5 | Which Dorm is closest to Rice Hall? | Page Dorm
+| 5 | Which Dorm has the most central location? | Brown Residential College
 
 ---
 

@@ -30,7 +30,7 @@ I chose to specalize in my university's on-campus first year housing options bec
 | 8 | Reddit: UVA Dorms Ranked | Student forum discussion | https://www.reddit.com/r/UVA/comments/12y2smz/uva_dorms_ranked/ |
 | 9 | College Confidential: Freshman Dorms | Student forum discussion | https://talk.collegeconfidential.com/t/freshman-dorms/1805679/2 |
 | 11 | Roomsurf: UVA Dorms Ranked | Student ranking list | https://www.roomsurf.com/dorms-ranked/virginia |
-
+| 12 | UVA First-Year Housing Overview | Official overview with locations/neighborhoods | https://housing.virginia.edu/first-year-housing |
 
 
 ---
@@ -85,7 +85,7 @@ Finally, I would choose to have no Multilingual Support because there is only a 
 | 2 | What is the difference between Residential Colleges and other First-Year Dorm Options? | Res Colleges have students from all years, while First-Year dorms have only First-Year students
 | 3 | Which dorms have personal bathrooms (i.e. non communal bathrooms)? | Any suite style dorm (Gooch Dillard, Alderman Road Suite Style Dorms) |
 | 4 | Which Dorm is closest to Runk Dining Hall? | Gooch Dillard
-| 5 | Which Dorm has the most central location? | Brown Residential College
+| 5 | Which Dorm has the most central location? | Brown Residential Colleg
 
 ---
 
@@ -116,22 +116,10 @@ Finally, I would choose to have no Multilingual Support because there is only a 
 
 ```mermaid
 flowchart TD
-    A["Document Ingestion\n(requests + BeautifulSoup for UVA pages;\nmanual .txt files for Reddit / CC / roomsurf)"]
-    A --> |"Fixed-size chunking\n1000 chars / 200 overlap\nsource_label + source_url attached to each chunk"| B
-
-    B["Chunking\n(ingest.py → chunk_text())"]
-    B --> |"Encode with all-MiniLM-L6-v2\nStore vectors + metadata in ChromaDB"| C
-
-    C["Embedding + Vector Store\n(embed.py → build_vector_store())"]
-    C --> |"Query vector, top-k = 5\nReturn chunks with text + source metadata"| D
-
-    D["Retrieval\n(embed.py → retrieve())"]
-    D --> |"Numbered chunks injected into prompt\nclaude-sonnet-4-6 via Anthropic SDK"| E
-
-    E["Generation\n(generate.py → generate_answer())"]
-    E --> |"Answer + clickable source URLs\nStreamlit single-page UI"| F
-
-    F["Interface\n(app.py — Streamlit)"]
+    A["Ingestion"] -->|"Fixed-Size Chunking"| B["Chunking"]
+    B -->|"all-MiniLM-L6-v2 Embedding + ChromaDB Vector Storage"| C["Embedding + Vector Storage"]
+    C -->|"Top-k = 5; Information directly pulled from content with sources"| D["Retrieval + Generation"]
+    D -->|"Answer + Clickable Source URLs"| E["Interface: Streamlit + app.py"]
 ```
 
 

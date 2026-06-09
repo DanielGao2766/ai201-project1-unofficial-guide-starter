@@ -1,9 +1,9 @@
 # The Unofficial Guide — Project 1
 
-> **How to use this template:**
+<!-- > **How to use this template:**
 > Complete each section *after* you've built and tested the corresponding part of your system.
 > Do not write placeholder text — if a section isn't done yet, leave it blank and come back.
-> Every section below is required for submission. One-liners will not receive full credit.
+> Every section below is required for submission. One-liners will not receive full credit. -->
 
 ---
 
@@ -95,8 +95,7 @@ Keep answers concise and factual.
 
 **How source attribution is surfaced in the response:**
 
-The model will cite the source based on the metadata within the chunk which contains the source. Additionally, all of the sources it pulls from will appear at the botttom for any user to do further investigation about the models answer. 
-
+The model will cite the source based on the metadata within the chunk that contains the source. Additionally, all of the sources it pulls from will appear at the bottom, allowing users to conduct further investigation into the model's answer.
 ---
 
 ## Evaluation Report
@@ -133,11 +132,19 @@ The model will cite the source based on the metadata within the chunk which cont
 
 **Question that failed:**
 
+Which Dorm is closest to Runk Dining Hall?
+
 **What the system returned:**
+
+The context does not contain enough information to answer which dorm is closest to Runk Dining Hall
 
 **Root cause (tied to a specific pipeline stage):**
 
+The issue is tied to the Ingestion Stage as I didn't include a University Campus Map for the model to be able to pull from to answer about distances beyond what the dormitory information pages already provide. 
+
 **What you would change to fix it:**
+
+I would try to find a way to add a map as one of the sources so it can answer common questions such as: which dorm is closest to xyz, how far of a walk from xyz dorm to xyz location, etc. 
 
 ---
 
@@ -148,7 +155,11 @@ The model will cite the source based on the metadata within the chunk which cont
 
 **One way the spec helped you during implementation:**
 
+Working on planning.md before doing the implementation allowed to catch some of the desgin questions that I hadn't thought about and would have to fix midway through the project otherwise. One of the most prominent of these was the chunking portion questions as I completely forgot that for a RAG system, there has to be a chunking strategy, so then I had to touch up on all the different strategies and then choose the best one for my specific project. 
+
 **One way your implementation diverged from the spec, and why:**
+
+One way my implementation diverged from the spec was through the AI model that I would implement for the specific RAG system. Originally, I though I was going to use the Claude Sonnet model, however, after getting over some inital confusion during implementation, I switched to the Grok Model.
 
 ---
 
@@ -165,12 +176,12 @@ The model will cite the source based on the metadata within the chunk which cont
 
 **Instance 1**
 
-- *What I gave the AI:*
-- *What it produced:*
-- *What I changed or overrode:*
+- *What I gave the AI:* I gave Claude my Documents and Domain Sections and asked it to help me implement an HTML parser.  
+- *What it produced:* It produced a function using BeautifulSoup to scalp data from the websites. 
+- *What I changed or overrode:* I had to change the headers variable within the requests function since the websites were blocking the initial requests. 
 
 **Instance 2**
 
-- *What I gave the AI:*
-- *What it produced:*
-- *What I changed or overrode:*
+- *What I gave the AI:* I gave Claude my planning.md and used the AskUserQuestionTool to check for gaps in my document
+- *What it produced:* It prompted me for my Generation Strategy such as how I wanted my sources listed, either next to the text or at the end, and other such questions that helped me refine my plan. 
+- *What I changed or overrode:* I changed the Ingestion approach as it was trying to get all the websites through BeautifulSoup, but some of the sources such as Reddit use JavaScript and therefore needed other methods to retrieve the information.

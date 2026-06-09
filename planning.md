@@ -20,17 +20,17 @@ I chose to specalize in my university's on-campus first year housing options bec
 
 | # | Source | Description | URL or location |
 |---|--------|-------------|-----------------|
-| 1 | New Hall Style Dorms| https://housing.virginia.edu/alderman-hall
-| 2 | New Suite Style Dorms| https://housing.virginia.edu/alderman-suite
-| 3 | Brown Residential Collage | https://housing.virginia.edu/brown
-| 4 | Hereford Residential Collage | https://housing.virginia.edu/hereford
-| 5 | International Residential Collage | https://housing.virginia.edu/irc
-| 6 | Gooch & Dillard Suite Dorm| https://housing.virginia.edu/gooch-dillard
-| 7 | Old Dorms | https://housing.virginia.edu/mccormick
-| 8 | Forum Discussion | https://www.reddit.com/r/UVA/comments/12y2smz/uva_dorms_ranked/
-| 9 | Forum Discussion |https://talk.collegeconfidential.com/t/freshman-dorms/1805679/2
-| 10 | Ranking List | https://www.society19.com/ultimate-ranking-of-first-year-dorm-choices-at-uva/
-| 11 | Ranking List | https://www.roomsurf.com/dorms-ranked/virginia
+| 1 | New Hall Style Dorms | Official page | https://housing.virginia.edu/alderman-hall |
+| 2 | New Suite Style Dorms | Official page | https://housing.virginia.edu/alderman-suite |
+| 3 | Brown Residential College | Official page | https://housing.virginia.edu/brown |
+| 4 | Hereford Residential College | Official page | https://housing.virginia.edu/hereford |
+| 5 | International Residential College | Official page | https://housing.virginia.edu/irc |
+| 6 | Gooch & Dillard Suite Dorm | Official page | https://housing.virginia.edu/gooch-dillard |
+| 7 | Old Dorms (McCormick area) | Official page | https://housing.virginia.edu/mccormick |
+| 8 | Reddit: UVA Dorms Ranked | Student forum discussion | https://www.reddit.com/r/UVA/comments/12y2smz/uva_dorms_ranked/ |
+| 9 | College Confidential: Freshman Dorms | Student forum discussion | https://talk.collegeconfidential.com/t/freshman-dorms/1805679/2 |
+| 11 | Roomsurf: UVA Dorms Ranked | Student ranking list | https://www.roomsurf.com/dorms-ranked/virginia |
+| 12 | UVA First-Year Housing Overview | Official overview with locations/neighborhoods | https://housing.virginia.edu/first-year-housing |
 
 
 ---
@@ -43,9 +43,9 @@ I chose to specalize in my university's on-campus first year housing options bec
      A review-heavy corpus warrants different chunking than a long FAQ. -->
 
 **Chunk size:**
-1000 Characters
+500 Characters
 **Overlap:**
-200 Characters
+100 Characters
 **Reasoning:**
 I mostly have structured pages or forum discussions with structured text that are a max of around 200 words (~ 1000 characters), therefore a fixed size chunking would be better than recursive or semantic chunking because I don't have long text and I also don't have high level seperators in my sources.
 ---
@@ -81,9 +81,9 @@ Finally, I would choose to have no Multilingual Support because there is only a 
 
 | # | Question | Expected answer |
 |---|----------|-----------------|
-| 1 | What is the closest dining hall to Newcomb Dining Hall? | Brown Residential College
+| 1 | What is the closest dorm to Newcomb Dining Hall? | Brown Residential College
 | 2 | What is the difference between Residential Colleges and other First-Year Dorm Options? | Res Colleges have students from all years, while First-Year dorms have only First-Year students
-| 3 | Which dorms have personal bathrooms (i.e. non communal bathrooms)? Any suite style dorm (Gooch Dillard, Alderman Road Suite Style Dorms)
+| 3 | Which dorms have personal bathrooms (i.e. non communal bathrooms)? | Any suite style dorm (Gooch Dillard, Alderman Road Suite Style Dorms) |
 | 4 | Which Dorm is closest to Runk Dining Hall? | Gooch Dillard
 | 5 | Which Dorm is closest to Rice Hall? | Page Dorm
 
@@ -110,11 +110,28 @@ Finally, I would choose to have no Multilingual Support because there is only a 
 
 
 <!-- Need to use the command Ctrl + Z to make the diagram appear -->
+<!-- Tutorial: https://jimmywongiot.com/2025/08/28/how-to-use-mermaid-in-visual-studio-code-a-step-by-step-guide-for-developers/ -->
+<!-- Mermaid Editor: https://mermaid.ai/live/edit#pako:eNpVjk9PwzAMxb-K5ROIFbXr2q1FILENENK4AOLAukNo3DYiTaYshf3pvjvppiHIIbL9_HvPO8w1J0yxkPo7r5ixMHvOFLh3O39UJa2s0GoBnncD7b1YE_dexJZgUjXqU6gS2vHZqT4_cuPjMpPSexJKzJ68Wex99eGu_iDOO-bC4UbXbDqGN8qtNvDiPlZSO5n_3fovLo72k86-fdVL7xOuIbqCR1VoU7PuTuDCOEZuYNlISRwKFwO5VpaUhW9hK1jpxuS0amE6fyZrBH0x6aIeSJE5eLiYLgh7WBrBMbWmoR7W5CK6FnedmqGtqKYMU1dyKlgjbYaZ2jtsydS71vWJNLopK0wLJleua5acWZoKVhpW_04NKU5mohtlMQ36cXJwwXSHa0zD6NIPBtGwH0dJHIWduMG078aD2I8HcTgK_WEUhPsebg-5_mUS-2HiB9HIDwNXDPc_7rabuA -->
+
+
 ```mermaid
 flowchart TD
-    A[Ingestion] --> |Fixed-Size Chunking |B(Chunking)
-    B --> |all-MiniLM-L6-v2 Embedding + ChromaDB Vector Storage|C[Embedding + Vector Storage]
-    C -->|Top-k = 5; Information directly pulled from content with sources| D[Retrieval + Generation]
+    A["Document Ingestion\n(requests + BeautifulSoup for UVA pages;\nmanual .txt files for Reddit / CC / roomsurf)"]
+    A --> |"Fixed-size chunking\n1000 chars / 200 overlap\nsource_label + source_url attached to each chunk"| B
+
+    B["Chunking\n(ingest.py → chunk_text())"]
+    B --> |"Encode with all-MiniLM-L6-v2\nStore vectors + metadata in ChromaDB"| C
+
+    C["Embedding + Vector Store\n(embed.py → build_vector_store())"]
+    C --> |"Query vector, top-k = 5\nReturn chunks with text + source metadata"| D
+
+    D["Retrieval\n(embed.py → retrieve())"]
+    D --> |"Numbered chunks injected into prompt\nclaude-sonnet-4-6 via Anthropic SDK"| E
+
+    E["Generation\n(generate.py → generate_answer())"]
+    E --> |"Answer + clickable source URLs\nStreamlit single-page UI"| F
+
+    F["Interface\n(app.py — Streamlit)"]
 ```
 
 
@@ -138,6 +155,24 @@ flowchart TD
 
 **Milestone 3 — Ingestion and chunking:**
 
+- **Tool:** Claude Code (claude-sonnet-4-6)
+- **Input:** The Documents table and Chunking Strategy section of this file, plus the `config.py` SOURCE_MAP
+- **Prompt:** "Using the Documents table and Chunking Strategy section in my planning.md, implement two functions in `ingest.py`: (1) `load_documents() -> list[dict]` that scrapes each official UVA housing URL in SOURCE_MAP using requests + BeautifulSoup and loads manual `.txt` files from the `/documents` folder, returning `[{'text': str, 'source_label': str, 'source_url': str}]`; (2) `chunk_text(doc: dict, chunk_size=1000, overlap=200) -> list[dict]` that splits doc text into fixed-size character chunks with overlap, preserving source_label and source_url in each chunk dict."
+- **Expected output:** Working `ingest.py` with both functions; running `python ingest.py` prints the first 3 chunks from each source showing text + source_label
+- **Verification:** Manually confirm source_label is present on every chunk and that no chunk is empty or contains only nav/footer boilerplate
+
 **Milestone 4 — Embedding and retrieval:**
 
+- **Tool:** Claude Code (claude-sonnet-4-6)
+- **Input:** The Retrieval Approach section of this file + the chunk dict structure `{'text', 'source_label', 'source_url'}` from Milestone 3
+- **Prompt:** "Using the Retrieval Approach section of my planning.md, implement two functions in `embed.py`: (1) `build_vector_store(chunks: list[dict])` that encodes chunk texts with `sentence-transformers/all-MiniLM-L6-v2` and stores vectors plus metadata (`source_label`, `source_url`) in a ChromaDB PersistentClient collection named 'uva_housing'; (2) `retrieve(query: str, k: int = 5) -> list[dict]` that embeds the query and returns the top-k chunks as `[{'text', 'source_label', 'source_url'}]`."
+- **Expected output:** Working `embed.py`; running it builds the ChromaDB collection on disk
+- **Verification:** Call `retrieve("which dorm has suite-style bathrooms")` and confirm top results contain Gooch-Dillard and Alderman Suite chunks with source_label present
+
 **Milestone 5 — Generation and interface:**
+
+- **Tool:** Claude Code (claude-sonnet-4-6)
+- **Input:** The system prompt design below + the `retrieve()` output format from Milestone 4
+- **Prompt:** "Implement `generate_answer(query: str, chunks: list[dict]) -> str` in `generate.py` using the Groq Python SDK. System prompt: 'You are a helpful guide for UVA first-year students choosing housing. Answer ONLY from the provided context chunks. Each chunk is labeled with its source. If the context does not contain enough information to answer, say so clearly — do not guess.' Inject chunks into the user message as numbered blocks: `[1] (source_label)\n{text}\n\n[2] ...` followed by the question. Use model `llama-3.3-70b-versatile`. Then implement `app.py` as a Streamlit single-page app: text input → spinner → `st.markdown(answer)` → deduplicated clickable source URLs listed below the answer."
+- **Expected output:** Working `generate.py` and `app.py`; `streamlit run app.py` opens the UI
+- **Verification:** Run all 5 evaluation questions end-to-end; confirm answers are accurate, citations appear as clickable links, and asking "What does a meal plan cost?" returns a refusal rather than a hallucinated number

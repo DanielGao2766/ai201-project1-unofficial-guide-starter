@@ -93,7 +93,7 @@
 
 | # | Question | Expected answer | System response (summarized) | Retrieval quality | Response accuracy |
 |---|----------|-----------------|------------------------------|-------------------|-------------------|
-| 1 | | | | | |
+| 1 | What is the closest dorm to Newcomb Dining Hall? | Brown Residential College | According to [1] (brown_official), Brown Residential College is 1 minute from Central Grounds, and Newcomb Hall is implied to be on Central Grounds (as it has mail services and is mentioned alongside a distance to Central Grounds and bus routes). Therefore, Brown Residential College is near Newcomb Hall | Relevant | Accurate |
 | 2 | | | | | |
 | 3 | | | | | |
 | 4 | | | | | |

@@ -30,7 +30,7 @@ I chose to specalize in my university's on-campus first year housing options bec
 | 8 | Reddit: UVA Dorms Ranked | Student forum discussion | https://www.reddit.com/r/UVA/comments/12y2smz/uva_dorms_ranked/ |
 | 9 | College Confidential: Freshman Dorms | Student forum discussion | https://talk.collegeconfidential.com/t/freshman-dorms/1805679/2 |
 | 11 | Roomsurf: UVA Dorms Ranked | Student ranking list | https://www.roomsurf.com/dorms-ranked/virginia |
-| 12 | UVA First-Year Housing Overview | Official overview with locations/neighborhoods | https://housing.virginia.edu/first-year-housing |
+
 
 
 ---

@@ -36,7 +36,6 @@ I chose to specalize in my university's on-campus first year housing options bec
 | 8 | Reddit: UVA Dorms Ranked | Student forum discussion | https://www.reddit.com/r/UVA/comments/12y2smz/uva_dorms_ranked/ |
 | 9 | College Confidential: Freshman Dorms | Student forum discussion | https://talk.collegeconfidential.com/t/freshman-dorms/1805679/2 |
 | 11 | Roomsurf: UVA Dorms Ranked | Student ranking list | https://www.roomsurf.com/dorms-ranked/virginia |
-| 12 | UVA First-Year Housing Overview | Official overview with locations/neighborhoods | https://housing.virginia.edu/first-year-housing |
 
 ---
 
@@ -55,6 +54,8 @@ I chose to specalize in my university's on-campus first year housing options bec
 
 **Why these choices fit your documents:**
 
+My sources are mostly short-from with forum comments being around 100 words and official page paragrahhs being around 1-3 sentences meaning that a 500 character chunk size with a 100 chracter overlap aligns each chunk with at least one single coherent thought. 
+
 **Final chunk count:** 150
 
 ---
@@ -68,8 +69,11 @@ I chose to specalize in my university's on-campus first year housing options bec
      latency, and local vs. API-hosted. -->
 
 **Model used:**
+all-MiniLM-L6-v2 via sentence-transformers
 
 **Production tradeoff reflection:**
+
+Given a no-cost constraint, I would choose a domain-specific, English-only embedding model with low context length and higher latency. A domain-specific model would better understand the university's location, surrounding areas, and housing nuances. A low context length would be sufficient since there are not a lot of specific ideas that need to be linked together, just raw fact-based information. Additionally, I would want high latency, because I care more about the quality of the information then the speed since any general LLM model (i.e. ChatGPT, Gemini) can give generic information about each dorm but not all the nuance. Finally, multilingual support is unnecessary given the relatively small international student population, allowing resources to be focused on improving performance in English.
 
 ---
 

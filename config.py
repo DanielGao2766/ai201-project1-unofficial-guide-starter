@@ -15,7 +15,6 @@ SOURCE_MAP = {
     "irc_official":            "https://housing.virginia.edu/irc",
     "gooch_dillard_official":  "https://housing.virginia.edu/gooch-dillard",
     "mccormick_official":      "https://housing.virginia.edu/mccormick",
-    "first_year_housing":      "https://housing.virginia.edu/first-year-housing",
     "reddit_dorms_ranked":     "https://www.reddit.com/r/UVA/comments/12y2smz/uva_dorms_ranked/",
     "college_confidential":    "https://talk.collegeconfidential.com/t/freshman-dorms/1805679/2",
     "roomsurf_ranking":        "https://www.roomsurf.com/dorms-ranked/virginia",

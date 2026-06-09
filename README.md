@@ -96,6 +96,7 @@ Keep answers concise and factual.
 **How source attribution is surfaced in the response:**
 
 The model will cite the source based on the metadata within the chunk that contains the source. Additionally, all of the sources it pulls from will appear at the bottom, allowing users to conduct further investigation into the model's answer.
+
 ---
 
 ## Evaluation Report

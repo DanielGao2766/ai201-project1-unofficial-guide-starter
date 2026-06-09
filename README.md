@@ -14,6 +14,8 @@
      Example: "Student reviews of CS professors at [university] — useful because official
      course descriptions don't reflect teaching style, exam difficulty, or workload." -->
 
+I chose to specalize in my university's on-campus first year housing options because opinions are varied and the official page lists all the options and amenities but nothing about the community experience surrounding each dorm. This combined with not knowing much about the University before attending leads to many not knowing which dormitory would be the best fit for them and what they should put in their rankings for preferred dorm options. 
+
 ---
 
 ## Document Sources
@@ -24,16 +26,17 @@
 
 | # | Source | Type | URL or file path |
 |---|--------|------|-----------------|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-| 5 | | | |
-| 6 | | | |
-| 7 | | | |
-| 8 | | | |
-| 9 | | | |
-| 10 | | | |
+| 1 | New Hall Style Dorms | Official page | https://housing.virginia.edu/alderman-hall |
+| 2 | New Suite Style Dorms | Official page | https://housing.virginia.edu/alderman-suite |
+| 3 | Brown Residential College | Official page | https://housing.virginia.edu/brown |
+| 4 | Hereford Residential College | Official page | https://housing.virginia.edu/hereford |
+| 5 | International Residential College | Official page | https://housing.virginia.edu/irc |
+| 6 | Gooch & Dillard Suite Dorm | Official page | https://housing.virginia.edu/gooch-dillard |
+| 7 | Old Dorms (McCormick area) | Official page | https://housing.virginia.edu/mccormick |
+| 8 | Reddit: UVA Dorms Ranked | Student forum discussion | https://www.reddit.com/r/UVA/comments/12y2smz/uva_dorms_ranked/ |
+| 9 | College Confidential: Freshman Dorms | Student forum discussion | https://talk.collegeconfidential.com/t/freshman-dorms/1805679/2 |
+| 11 | Roomsurf: UVA Dorms Ranked | Student ranking list | https://www.roomsurf.com/dorms-ranked/virginia |
+| 12 | UVA First-Year Housing Overview | Official overview with locations/neighborhoods | https://housing.virginia.edu/first-year-housing |
 
 ---
 
@@ -46,13 +49,13 @@
      - Any preprocessing you did before chunking (e.g., stripping HTML, removing headers)
      - What your final chunk count was across all documents -->
 
-**Chunk size:**
+**Chunk size:** 500 Characters
 
-**Overlap:**
+**Overlap:** 100 Characters
 
 **Why these choices fit your documents:**
 
-**Final chunk count:**
+**Final chunk count:** 150
 
 ---
 
@@ -97,7 +100,7 @@
 | 2 | What is the difference between Residential Colleges and other First-Year Dorm Options? | Residential Colleges have students from all years, while First-Year dorms have only First-Year students | The main difference is that students can apply for Residential Colleges, which gives them some say in their housing, whereas assignments in traditional buildings are random. Additionally, Residential Colleges may have a different room setup, with some having double rooms, and at least one (Brown) having a selective application process | Partially relevant | Partially accurate |
 | 3 | Which dorms have personal bathrooms (i.e. non communal bathrooms)? | Any suite style dorm (Gooch Dillard, Alderman Road Suite Style Dorms) | Based on the provided context, it appears that there are no dorms with completely personal bathrooms (i.e., non-communal bathrooms) for first-year students. However, some dorms have suite-style arrangements where a private bathroom is shared among a few people (typically 3-4) | Relevant | Accurate |
 | 4 | Which Dorm is closest to Runk Dining Hall? | Gooch-Dillard| The context does not contain enough information to answer which dorm is closest to Runk Dining Hall | Off-target | Inaccurate |
-| 5 | Which Dorm has the most central location? | According to [1] (reddit_dorms_ranked), Brown has the best location of any dorm. | Relevant | Accurate | 
+| 5 | Which Dorm has the most central location? | Brown Residential College |According to [1] (reddit_dorms_ranked), Brown has the best location of any dorm. | Relevant | Accurate | 
 
 **Retrieval quality:** Relevant / Partially relevant / Off-target  
 **Response accuracy:** Accurate / Partially accurate / Inaccurate

@@ -54,7 +54,7 @@ I chose to specalize in my university's on-campus first year housing options bec
 
 **Why these choices fit your documents:**
 
-My sources are mostly short-from with forum comments being around 100 words and official page paragrahhs being around 1-3 sentences meaning that a 500 character chunk size with a 100 chracter overlap aligns each chunk with at least one single coherent thought. 
+My sources are mostly short-from with forum comments being around 100 words and official page paragrahs being around 1-3 sentences meaning that a 500 character chunk size with a 100 chracter overlap aligns each chunk with at least one single coherent thought. 
 
 **Final chunk count:** 150
 
@@ -88,7 +88,14 @@ Given a no-cost constraint, I would choose a domain-specific, English-only embed
 
 **System prompt grounding instruction:**
 
+You are a helpful guide for UVA first-year students choosing housing.
+Answer ONLY from the provided context chunks. Each chunk is labeled with its source.
+If the context does not contain enough information to answer, say so clearly — do not guess.
+Keep answers concise and factual.
+
 **How source attribution is surfaced in the response:**
+
+The model will cite the source based on the metadata within the chunk which contains the source. Additionally, all of the sources it pulls from will appear at the botttom for any user to do further investigation about the models answer. 
 
 ---
 
